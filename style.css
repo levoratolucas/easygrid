@@ -152,6 +152,8 @@ footer {
         top: 0;
         background-color: #000000;
     }
+    .topo{
+        margin: 10px;}
     main{
         display: block;
     }
