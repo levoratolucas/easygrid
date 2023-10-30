@@ -37,16 +37,16 @@ var aplicar = document.getElementById("inserir_nome").value
 
 function largura(aplicar = document.getElementById("inserir_nome").value) {
     const larg = document.getElementById("inserir_largura").value
-    document.getElementById(aplicar).style.width = larg + "px";
-    document.getElementById(aplicar + "width").innerText = "width:" + larg + "px;";
+    document.getElementById(aplicar).style.width = larg;
+    document.getElementById(aplicar + "width").innerText = "width:" + larg + ";";
     document.getElementById(aplicar + "width").style.display = "block";
     document.getElementById("visor" + aplicar).style.order = "0";
 }
 
 function altura(aplicar = document.getElementById("inserir_nome").value) {
     const altu = document.getElementById("inserir_altura").value
-    document.getElementById(aplicar).style.height = altu + "px";
-    document.getElementById(aplicar + "height").innerText = "height:" + altu + "px;";
+    document.getElementById(aplicar).style.height = altu;
+    document.getElementById(aplicar + "height").innerText = "height:" + altu + ";";
     document.getElementById(aplicar + "height").style.display = "block";
     document.getElementById("visor" + aplicar).style.order = "0";
 }
