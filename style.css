@@ -98,7 +98,7 @@ overflow: auto;
     
 }
 .navegacao_janela{
-    background-image: url(/barra\ navegação.png);
+    background-image: url(barra navegação.png);
     width: 104%;
     background-size: cover;
     margin-left: -33px;
