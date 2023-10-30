@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+    <style>
+        #flex_on {
+            display: none;
+            width: calc(100% - 10px);
+            background-color: rgb(25, 27, 30);
+            color: white;
+            padding: 5px;
+            
+            border-bottom: solid;
+        }
+        #border_on {
+            display: none;
+            width: calc(100%);
+            height: calc(100% - 10px);
+            background-color: rgb(25, 27, 30);
+            color: white;
+            padding: 5px;
+        }
+
+        #flex_on select {
+            max-width: 90px;
+            width: auto;
+            margin-right: 10px;
+        }
+        #flex_on label{
+            margin-left: 10px;
+        }
+
+        .campos label {
+            width: 100px;
+            display: inline-block;
+            justify-content: space-around;
+        }
+
+
+        #grid_on {
+            display: none;
+            width: calc(100% - 20px);
+            border-bottom: solid white;
+            background-color: rgb(25, 27, 30);
+            color: white;
+            padding: 10px;
+        }
+
+        #grid_on label {
+
+            border-bottom: solid white;
+
+        }
+
+        #tela div {
+            height: 100px;
+            width: 100px;
+            border: solid;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topo">
+            <label for="inserir_display">Elemento:</label>
+            <select id="inserir_nome">
+                <option value="none">none</option>
+                <option value="body">body</option>
+                <option value="header">header</option>
+                <option value="main">main</option>
+                <option value="footer">footer</option>
+                <option value="div_1">div 1</option>
+                <option value="div_2">div 2</option>
+                <option value="div_3">div 3</option>
+                <option value="div_4">div 4</option>
+                <option value="div_5">div 5</option>
+                <option value="div_6">div 6</option>
+            </select>
+        </div>
+        <div class="topo">
+            <label>Width:</label>
+            <input id="inserir_largura" type="number">
+            <input type="button" value="aplicar" onclick="largura()">
+        </div>
+        <div class="topo">
+            <label>Height:</label>
+            <input id="inserir_altura" type="number">
+            <input type="button" value="aplicar" onclick="altura()">
+        </div>
+        <div class="topo">
+            <label>Background-color:</label>
+            <select id="inserir_cor" onclick="colorir()">
+                <option value="none">none</option>
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="green">green</option>
+                <option value="yellow">yellow</option>
+                <option value="orange">orange</option>
+                <option value="purple">purple</option>
+                <option value="pink">pink</option>
+                <option value="brown">brown</option>
+                <option value="black">black</option>
+                <option value="cyan">cyan</option>
+                <option value="magenta">magenta</option>
+                <option value="violet">violet</option>
+                <option value="teal">teal</option>
+                <option value="olive">olive</option>
+                <option value="maroon">maroon</option>
+                <option value="navy">navy</option>
+            </select>
+
+        </div>
+
+        <div class="topo">
+            <label for="inserir_display">Display:</label>
+
+            <select id="inserir_display" onchange="fun_display()">
+                <option value="none">none</option>
+                <option value="flex">flex</option>
+                <option value="grid">grid</option>
+                <option value="block">block</option>
+                <option value="inline">inline</option>
+                <option value="inline-block">inline-block</option>
+            </select>
+        </div>
+        <div class="topo">
+            <label for="inserir_borda">Border:</label>
+            <select id="inserir_borda" onchange="bor_display()">
+                <option value="none">none</option>
+                <option value="ativa">ativa</option>
+                <!-- <option value="dashed">dashed</option>
+        <option value="dotted">dotted</option>
+        <option value="double">double</option>
+        <option value="groove">groove</option>
+        <option value="ridge">ridge</option>
+        <option value="inset">inset</option>
+        <option value="outset">outset</option>
+         -->
+            </select>
+        </div>
+
+    </header>
+    <main>
+        <div class="janela">
+            <div class="navegacao_janela"></div>
+            <div id="body">
+                <div class="recursao" style=""></div>
+                <div id="header">
+
+                </div>
+                <div id="main">
+                    <div id="div_1"></div>
+                    <div id="div_2"></div>
+                    <div id="div_3"></div>
+                    <div id="div_4"></div>
+                    <div id="div_5"></div>
+                    <div id="div_6"></div>
+                </div>
+                <div id="footer">
+
+                </div>
+            </div>
+        </div>
+        <div class="guia">
+            <div class="seletores">
+                <div id="flex_on">
+                    <div class="campos">
+                        <label for=""><h4>display</h4></label><br>
+                        <label>Flex-wrap:</label>
+                        <select id="seletor_flex" onchange="set_flexwrap()">
+                            <option value="red">null</option>
+                            <option value="wrap">wrap</option>
+                            <option value="nowrap">nowrap</option>
+                            <option value="wrap-reverse">wrap-reverse</option>
+                            <option value="inherit">inherit</option>
+                            <option value="initial">initial</option>
+                        </select>
+                    </div>
+                    <div class="campos">
+                        <label for="seletor_flex_direction">Flex-direction:</label>
+                        <select id="seletor_flex_direction" onchange="set_flex_direction()">
+                            <option value="none">none</option>
+                            <option value="row">row</option>
+                            <option value="row-reverse">row-reverse</option>
+                            <option value="column">column</option>
+                            <option value="column-reverse">column-reverse</option>
+                            <option value="inherit">inherit</option>
+                            <option value="initial">initial</option>
+                        </select>
+                    </div>
+                    <div class="campos">
+                        <label for="seletor_justify_content">Justify-content:</label>
+                        <select id="seletor_justify_content" onchange="set_justify_content()">
+                            <option value="none">none</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                            <option value="inherit">inherit</option>
+                            <option value="initial">initial</option>
+                        </select>
+                    </div>
+                    <div class="campos">
+                        <label for="seletor_align_items">Align-items:</label>
+                        <select id="seletor_align_items" onchange="set_align_items()">
+                            <option value="none">none</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="baseline">baseline</option>
+                            <option value="stretch">stretch</option>
+                            <option value="inherit">inherit</option>
+                            <option value="initial">initial</option>
+                        </select>
+                    </div>
+                    <div class="campos">
+                        <label for="seletor_align_content">Align-content:</label>
+                        <select id="seletor_align_content" onchange="set_align_content()">
+                            <option value="none">none</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="stretch">stretch</option>
+                            <option value="inherit">inherit</option>
+                            <option value="initial">initial</option>
+                        </select>
+                    </div>
+
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div id="grid_on">
+                    <div class="campos">
+                        <label for=""><h4>display</h4></label><br>
+                        <label for="seletor_grid_template_columns">Grid-template-columns:</label>
+                        <select id="seletor_grid_template_columns" onchange="set_grid_template_columns()">
+                            <option value="none">none</option>
+                            <option value="auto">auto</option>
+                            <option value="1fr">1fr</option>
+                            <option value="2fr">2fr</option>
+                            <option value="3fr">3fr</option>
+                            <option value="min-content">min-content</option>
+                            <option value="max-content">max-content</option>
+                            <option value="fit-content(200px)">fit-content(200px)</option>
+                            <option value="repeat(2, 1fr)">repeat(2, 1fr)</option>
+
+                        </select>
+                    </div>
+                    <div class="campos">
+                        <label for="seletor_grid_template_rows">Grid-template-rows:</label>
+                        <select id="seletor_grid_template_rows" onchange="set_grid_template_rows()">
+                            <option value="none">none</option>
+                            <option value="auto">auto</option>
+                            <option value="1fr">1fr</option>
+                            <option value="2fr">2fr</option>
+                            <option value="3fr">3fr</option>
+                            <option value="min-content">min-content</option>
+                            <option value="max-content">max-content</option>
+                            <option value="fit-content(200px)">fit-content(200px)</option>
+                            <option value="repeat(2, 1fr)">repeat(2, 1fr)</option>
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="seletor_gap_colunm">Grid-column-gap:</label>
+                        <select id="seletor_gap_colunm" onchange="set_gap_colunm()">
+                            <option value="none">none</option>
+                            <option value="10px">10px</option>
+                            <option value="20px">20px</option>
+                            <option value="30px">30px</option>
+
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="seletor_gap_row">Grid-row-gap:</label>
+                        <select id="seletor_gap_row" onchange="set_gap_row()">
+                            <option value="none">none</option>
+                            <option value="10px">10px</option>
+                            <option value="20px">20px</option>
+                            <option value="30px">30px</option>
+                        </select>
+                    </div>
+
+                    <!--<<div class="campos">
+                        <label for="seletor_gap">Grid-column:</label>
+                        <select id="seletor_grap" onchange="set_gap()">
+                            <option value="none">none</option>
+                            <option value="10px">10px</option>
+                            <option value="20px">20px</option>
+                            <option value="30px">30px</option>
+                        </select>
+                    </div>
+
+                    div class="campos">
+                        <label for="seletor_grid_row">Grid-row:</label>
+                        <select id="seletor_grid_row">
+                            <option value="none">none</option>
+                            <option value="span 2">span 2 - Ocupa duas linhas</option>
+                           
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="seletor_grid_area">Grid-area:</label>
+                        <select id="seletor_grid_area">
+                            <option value="none">none</option>
+                            <option value="area">area - Atribui a área especificada</option>
+                        </select>
+                    -->
+
+
+                    <div class="campos">
+                        <label for="seletor_justify_items">Justify-items:</label>
+                        <select id="seletor_justify_items" onchange="set_justify_items()">
+                            <option value="none">none</option>
+                            <option value="start">start - Alinha no início do contêiner</option>
+
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="seletor_align_items">Align-items:</label>
+                        <select id="seletor_align_items" onchange="set_align_items()">
+                            <option value="none">none</option>
+                            <option value="start">start - Alinha no início do contêiner</option>
+
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="seletor_justify_content">Justify-content:</label>
+                        <select id="seletor_justify_content" onchange="set_justify_content()">
+                            <option value="none">none</option>
+                            <option value="start">start - Alinha no início do contêiner</option>
+
+                        </select>
+                    </div>
+
+                    <div class="campos">
+                        <label for="seletor_align_content">Align-content:</label>
+                        <select id="seletor_align_content" onchange="set_align_content()">
+                            <option value="none">none</option>
+                            <option value="start">start</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div id="border_on">
+                    <div class="campos">
+                        <label for=""><h4>Bordas</h4></label>
+                        <br><label>border-radius:</label>
+                        <input style="width: 50px;" id="seletot_border-radius:" type="text">
+                        <input type="button" value="aplicar" onclick="set_border_radius()">
+                        </select>
+
+                        <label>border-bottom:</label>
+                        <input style="width: 50px;" id="seletot_border-bottom:" type="text">
+                        <input type="button" value="aplicar" onclick="funcao">
+                        </select>
+
+                        <label>border-left:</label>
+                        <input style="width: 50px;" id="seletot_border-left:" type="text">
+                        <input type="button" value="aplicar" onclick="funcao">
+                        </select>
+
+                        <label>border-right:</label>
+                        <input style="width: 50px;" id="seletot_border-right:" type="text">
+                        <input type="button" value="aplicar" onclick="funcao">
+                        </select>
+
+                        <label>border-top:</label>
+                        <input style="width: 50px;" id="seletot_border-top:" type="text">
+                        <input type="button" value="aplicar" onclick="funcao">
+                        </select>
+
+                        <label>border-solid:</label>
+                        <input style="width: 50px;" id="seletot_border-solid:" type="text">
+                        <input type="button" value="aplicar" onclick="funcao">
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--<div id="estrutura_div">
+
+            </div>-->
+            <div id="visorbody">
+                <p style="color: rgb(174, 174, 0);" id="classbody">Body{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="bodywidth">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodyheight">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodybackgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodydisplay">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodyflexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodyflexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyjustifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyalignItems">alignItems:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyalignContent">alignContent:
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodygridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodygridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodycolumnGap">columnGap:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyrowGap">rowGap</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodygap">gap</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyjustifyItems">justifyItems
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyalignItems">alignItems</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyjustifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="bodyalignContent">alignContent
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="body"></p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="body"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visorheader">
+                <p style="color: rgb(174, 174, 0);" id="classheader">header{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="headerwidth">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerheight">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerbackgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerdisplay">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerflexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerflexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headerjustifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headeralignItems">alignItems:
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headeralignContent">
+                    alignContent:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headergridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headergridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headercolumnGap">columnGap:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headerrowGap">rowGap</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headergap">gap</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headerjustifyItems">
+                    justifyItems</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headeralignItems">alignItems
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headerjustifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="headeralignContent">
+                    alignContent</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="header"></p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="header"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visormain">
+                <p style="color: rgb(174, 174, 0);" id="classmain">main{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="mainwidth">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainheight">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainbackgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="maindisplay">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainflexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainflexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainjustifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainalignItems">alignItems:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainalignContent">alignContent:
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="maingridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="maingridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="maincolumnGap">columnGap:</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainrowGap">rowGap</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="maingap">gap</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainjustifyItems">justifyItems
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainalignItems">alignItems</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainjustifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="mainalignContent">alignContent
+                </p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="main"></p>
+                <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="main"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visordiv_1">
+                <p style="color: rgb(174, 174, 0);" id="classdiv_1">div_1{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_1width">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1height">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1backgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1display">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1flexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1flexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1justifyContent">
+                    justifyContent:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1alignItems">alignItems:
+                </p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1alignContent">
+                    alignContent:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1gridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1gridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1columnGap">columnGap:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1rowGap">rowGap</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1gap">gap</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1justifyItems">justifyItems
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1alignItems">alignItems
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1justifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1alignContent">
+                    alignContent
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1"></p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visordiv_2">
+                <p style="color: rgb(174, 174, 0);" id="classdiv_2">div_2{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_2width">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2height">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2backgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2display">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2flexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2flexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2justifyContent">
+                    justifyContent:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2alignItems">alignItems:
+                </p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2alignContent">
+                    alignContent:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2gridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2gridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2columnGap">columnGap:</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2rowGap">rowGap</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2gap">gap</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2justifyItems">justifyItems
+                </p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2alignItems">alignItems</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2justifyContent">
+                    justifyContent</p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2alignContent">alignContent
+                </p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2"></p>
+                <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visordiv_3">
+                <p style="color: rgb(174, 174, 0);" id="classdiv_3">div_3{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_3width">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3height">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3backgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3display">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3flexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3flexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3justifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3alignItems">alignItems:
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3alignContent">
+                    alignContent:</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3gridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3gridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3columnGap">columnGap:</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3rowGap">rowGap</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3gap">gap</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3justifyItems">
+                    justifyItems
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3alignItems">alignItems
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3justifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3alignContent">
+                    alignContent
+                </p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3"></p>
+                <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visordiv_4">
+                <p style="color: rgb(174, 174, 0);" id="classdiv_4">div_4{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_4width">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4height">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4backgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4display">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4flexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4flexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4justifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4alignItems">alignItems:
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4alignContent">
+                    alignContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4gridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4gridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4columnGap">columnGap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4rowGap">rowGap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4gap">gap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4justifyItems">justifyItems
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4alignItems">alignItems</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4justifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4alignContent">alignContent
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4"></p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visordiv_5">
+                <p style="color: rgb(174, 174, 0);" id="classdiv_5">div_5{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_5width">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5height">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5backgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5display">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5flexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5flexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5justifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5alignItems">alignItems:
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5alignContent">
+                    alignContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5gridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5gridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5columnGap">columnGap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5rowGap">rowGap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5gap">gap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5justifyItems">justifyItems
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5alignItems">alignItems</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5justifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5alignContent">alignContent
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5"></p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visordiv_6">
+                <p style="color: rgb(174, 174, 0);" id="classdiv_6">div_6{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_6width">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6height">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6backgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6display">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6flexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6flexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6justifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6alignItems">alignItems:
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6alignContent">
+                    alignContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6gridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6gridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6columnGap">columnGap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6rowGap">rowGap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6gap">gap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6justifyItems">justifyItems
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6alignItems">alignItems</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6justifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6alignContent">alignContent
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6"></p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+            <div id="visorfooter">
+                <p style="color: rgb(174, 174, 0);" id="classfooter">footer{</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="footerwidth">sdfsd</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerheight">height: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerbackgroundColor">
+                    background-color: ;</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerdisplay">display:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerflexWrap">flexWrap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerflexDirection">
+                    flexDirection-color: rgb(25, 27, 30);</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerjustifyContent">
+                    justifyContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footeralignItems">alignItems:
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footeralignContent">
+                    alignContent:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footergridTemplateColumns">
+                    grid-Template-Columns:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footergridTemplateRows">
+                    grid-Template-Rows</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footercolumnGap">columnGap:</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerrowGap">rowGap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footergap">gap</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerjustifyItems">
+                    justifyItems</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footeralignItems">alignItems
+                </p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerjustifyContent">
+                    justifyContent</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footeralignContent">
+                    alignContent</p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footer"></p>
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footer"></p>
+                <p style="color: rgb(174, 174, 0);">}</p>
+            </div>
+
+        </div>
+
+
+    </main>
+    <footer>
+        produzido por lucas@SA
+    </footer>
+    <script src="/teste.js">
+
+    </script>
+    <!--    <div class="menu">
+             <div id="flex_on" >
+                .kzxhcblas,cb.hkz,jcmbr <br>
+                asjdkash
+            </div>
+            <input id="inserir_nome" type="text"><br> -- seleciona por id
+        </div>  -->
+</body>
+
+</html>
