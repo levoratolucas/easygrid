@@ -7,7 +7,7 @@
 body{
     max-width: 1250px;
     
-    background-color: rgb(28, 0, 0);
+    background-color:grey;
 }
 header {
     width: 100%;
@@ -135,7 +135,7 @@ footer {
     
     background-color: rgba(0, 0, 0, 0.734);
 }
-@media screen (max-width: 490px) {
+@media only screen and (max-width: 490px) {
     body{
         max-width: 480px;
         background-color: rgb(65, 43, 43);
