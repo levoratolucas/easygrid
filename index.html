@@ -13,9 +13,10 @@
             background-color: rgb(25, 27, 30);
             color: white;
             padding: 5px;
-            
+
             border-bottom: solid;
         }
+
         #border_on {
             display: none;
             width: calc(100%);
@@ -30,7 +31,8 @@
             width: auto;
             margin-right: 10px;
         }
-        #flex_on label{
+
+        #flex_on label {
             margin-left: 10px;
         }
 
@@ -68,9 +70,9 @@
 <body>
     <header>
         <div class="topo">
-            <label for="inserir_display">Elemento:</label>
+            <label for="">seletor:</label>
             <select id="inserir_nome">
-                <option value="none">none</option>
+                <option value="none">Elemento:</option>
                 <option value="body">body</option>
                 <option value="header">header</option>
                 <option value="main">main</option>
@@ -84,17 +86,54 @@
             </select>
         </div>
         <div class="topo">
-            <label>Width:</label>
-            <input id="inserir_largura" type="number">
-            <input type="button" value="aplicar" onclick="largura()">
+            <label for="">Width:</label>
+            <select name="" id="inserir_largura" onclick="largura()">
+                <option value="">Width</option>
+                <option value="100%">100%</option>
+                <option value="70%">70%</option>
+                <option value="50%">50%</option>
+                <option value="100px">100px</option>
+                <option value="200px">200px</option>
+                <option value="300px">300px</option>
+                <option value="400px">400px</option>
+                <option value="500px">500px</option>
+                <option value="600px">600px</option>
+                <option value="800px">800px</option>
+                <option value="100vw">100vw</option>
+                <option value="80vw">80vw</option>
+                <option value="70vw">70vw</option>
+                <option value="50vw">50vw</option>
+                <option value="30vw">30vw</option>
+                <option value="20vw">20vw</option>
+            </select>
+
+
         </div>
         <div class="topo">
             <label>Height:</label>
-            <input id="inserir_altura" type="number">
-            <input type="button" value="aplicar" onclick="altura()">
+            <select name="" id="inserir_altura" onclick="altura()">
+                <option value="">Width</option>
+                <option value="100%">100%</option>
+                <option value="70%">70%</option>
+                <option value="50%">50%</option>
+                <option value="100px">100px</option>
+                <option value="200px">200px</option>
+                <option value="300px">300px</option>
+                <option value="400px">400px</option>
+                <option value="500px">500px</option>
+                <option value="600px">600px</option>
+                <option value="800px">800px</option>
+                <option value="100vw">100vw</option>
+                <option value="80vw">80vw</option>
+                <option value="70vw">70vw</option>
+                <option value="50vw">50vw</option>
+                <option value="30vw">30vw</option>
+                <option value="20vw">20vw</option>
+           
+            </select>
         </div>
         <div class="topo">
-            <label>Background-color:</label>
+            <label>Background:</label>
             <select id="inserir_cor" onclick="colorir()">
                 <option value="none">none</option>
                 <option value="red">red</option>
