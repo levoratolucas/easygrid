@@ -142,7 +142,7 @@ footer {
     }
     header{
         margin: 0;
-        width: 480px;
+        width: 450px;
         border: none;
         box-shadow: none;
         height: 100px;
@@ -155,7 +155,7 @@ footer {
     }
     .janela{
         margin: 0;
-        width: 480px;
+        width: 450px;
         height: 250px;
         position: sticky;
         top: 100px;
