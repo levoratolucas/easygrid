@@ -7,7 +7,7 @@
 body{
     max-width: 1250px;
     
-    background-color:grey;
+    background-color: rgb(28, 0, 0);
 }
 header {
     width: 100%;
@@ -45,6 +45,7 @@ main {
     overflow: auto;
     margin: 10px;     
     width: 25%;
+    height: 550px;
     background-color: rgb(0, 0, 0);
     box-shadow:0 0 10px rgb(255, 217, 0);
     border-bottom: solid rgb(255, 217, 0);
@@ -71,9 +72,10 @@ main {
     color: white;
     margin-left: 10px;
 }
-#visorbody,#visorheader,#visormain,#visordiv_1,#visordiv_2,#visordiv_3,#visordiv_4,#visordiv_5,#visordiv_6,#visorfooter{
+#visorbody{
 min-width: 250px;
 width: 100%;
+height: 500px;
 order: 1;
 border: solid white;
 margin: 10px;
@@ -93,7 +95,7 @@ overflow: auto;
     width: 75%;
     height: 550px;
     margin: 10px; 
-    border: solid black;    
+    border: solid white;    
     background-color: white;
     background-size: cover;
     display: grid;
@@ -128,21 +130,21 @@ overflow: auto;
     margin-top: 63px;
     grid-row: 2;
     grid-column: 1/3;
-    
+    background-color: aqua;
 }
 
 footer {
     
     background-color: rgba(0, 0, 0, 0.734);
 }
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 480px) {
     body{
         max-width: 480px;
         background-color: rgb(65, 43, 43);
     }
     header{
         margin: 0;
-        width: 450px;
+        width: 480px;
         border: none;
         box-shadow: none;
         height: 100px;
@@ -155,7 +157,7 @@ footer {
     }
     .janela{
         margin: 0;
-        width: 450px;
+        width: 480px;
         height: 250px;
         position: sticky;
         top: 100px;
