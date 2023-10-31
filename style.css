@@ -154,12 +154,7 @@ footer {
     }
     .topo{
         margin: 10px;}
-    .topo input{
-    width: 200px;
-}
-.topo label,select{
-    width: 200px;
-}
+    
     main{
         display: block;
     }
