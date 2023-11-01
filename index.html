@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -70,8 +70,8 @@
 <body>
     <header>
         <div class="topo">
-            <label for="">seletor:</label>
-            <select id="inserir_nome">
+            <label for="">seletor:</label><br>
+            <select id="elemento">
                 <option value="none">Elemento:</option>
                 <option value="body">body</option>
                 <option value="header">header</option>
@@ -86,8 +86,8 @@
             </select>
         </div>
         <div class="topo">
-            <label for="">Width:</label>
-            <select name="" id="inserir_largura" onchange="largura()">
+            <label for="">Width:</label><br>
+            <select name="" id="width" onchange="global('width')">
                 <option value="">Width</option>
                 <option value="10px">10px</option>
                 <option value="20px">20px</option>
@@ -119,8 +119,8 @@
 
         </div>
         <div class="topo">
-            <label>Height:</label>
-            <select name="" id="inserir_altura" onchange="altura()">
+            <label>Height:</label><br>
+            <select name="" id="height" onchange="global('height')">
                 <option value="">Height</option>
                 <option value="10px">10px</option>
                 <option value="20px">20px</option>
@@ -147,12 +147,12 @@
                 <option value="100%">100%</option>
                 <option value="70%">70%</option>
                 <option value="50%">50%</option>
-           
+
             </select>
         </div>
         <div class="topo">
-            <label>Background:</label>
-            <select id="inserir_cor" onchange="colorir()">
+            <label>Background:</label><br>
+            <select id="background-color" onchange="global('background-color')">
                 <option value="none">none</option>
                 <option value="red">red</option>
                 <option value="blue">blue</option>
@@ -175,9 +175,9 @@
         </div>
 
         <div class="topo">
-            <label for="inserir_display">Display:</label>
+            <label for="display">Display:</label><br>
 
-            <select id="inserir_display" onchange="fun_display()">
+            <select id="display" onchange="global('display')">
                 <option value="none">none</option>
                 <option value="flex">flex</option>
                 <option value="grid">grid</option>
@@ -187,8 +187,8 @@
             </select>
         </div>
         <div class="topo">
-            <label for="inserir_borda">Border:</label>
-            <select id="inserir_borda" onchange="bor_display()">
+            <label for="border">Border:</label><br>
+            <select id="border" onchange="global('border')">
                 <option value="none">none</option>
                 <option value="ativa">ativa</option>
                 <!-- <option value="dashed">dashed</option>
@@ -205,9 +205,7 @@
     </header>
     <main>
         <div class="janela">
-            <div class="navegacao_janela"></div>
             <div id="body">
-                <div class="recursao" style=""></div>
                 <div id="header">
 
                 </div>
@@ -228,9 +226,11 @@
             <div class="seletores">
                 <div id="flex_on">
                     <div class="campos">
-                        <label for=""><h4>display</h4></label><br>
+                        <label for="">
+                            <h4>display</h4>
+                        </label><br>
                         <label>Flex-wrap:</label>
-                        <select id="seletor_flex" onchange="set_flexwrap()">
+                        <select id="flex-wrap" onchange="global('flex-wrap')">
                             <option value="red">null</option>
                             <option value="wrap">wrap</option>
                             <option value="nowrap">nowrap</option>
@@ -240,8 +240,8 @@
                         </select>
                     </div>
                     <div class="campos">
-                        <label for="seletor_flex_direction">Flex-direction:</label>
-                        <select id="seletor_flex_direction" onchange="set_flex_direction()">
+                        <label for="flex-direction">Flex-direction:</label>
+                        <select id="flex-direction" onchange="global('flex-direction')">
                             <option value="none">none</option>
                             <option value="row">row</option>
                             <option value="row-reverse">row-reverse</option>
@@ -252,8 +252,8 @@
                         </select>
                     </div>
                     <div class="campos">
-                        <label for="seletor_justify_content">Justify-content:</label>
-                        <select id="seletor_justify_content" onchange="set_justify_content()">
+                        <label for="justify-content">Justify-content:</label>
+                        <select id="justify-content" onchange="global('justify-content')">
                             <option value="none">none</option>
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
@@ -266,8 +266,8 @@
                         </select>
                     </div>
                     <div class="campos">
-                        <label for="seletor_align_items">Align-items:</label>
-                        <select id="seletor_align_items" onchange="set_align_items()">
+                        <label for="align-items">Align-items:</label>
+                        <select id="align-items" onchange="global('align-items')">
                             <option value="none">none</option>
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
@@ -279,8 +279,8 @@
                         </select>
                     </div>
                     <div class="campos">
-                        <label for="seletor_align_content">Align-content:</label>
-                        <select id="seletor_align_content" onchange="set_align_content()">
+                        <label for="align-content">Align-content:</label>
+                        <select id="align-content" onchange="global('align-content')">
                             <option value="none">none</option>
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
@@ -296,13 +296,15 @@
                     <div>
 
                     </div>
-                    <div>
-
+                    <div id="visorbodytxt" style="display: none;">
+                        
                     </div>
                 </div>
                 <div id="grid_on">
                     <div class="campos">
-                        <label for=""><h4>display</h4></label><br>
+                        <label for="">
+                            <h4>display</h4>
+                        </label><br>
                         <label for="seletor_grid_template_columns">Grid-template-columns:</label>
                         <select id="seletor_grid_template_columns" onchange="set_grid_template_columns()">
                             <option value="none">none</option>
@@ -419,34 +421,36 @@
                 </div>
                 <div id="border_on">
                     <div class="campos">
-                        <label for=""><h4>Bordas</h4></label>
+                        <label for="">
+                            <h4>Bordas</h4>
+                        </label>
                         <br><label>border-radius:</label>
-                        <input style="width: 50px;" id="seletot_border-radius:" type="text">
+                        <input id="seletot_border-radius:" type="text">
                         <input type="button" value="aplicar" onclick="set_border_radius()">
                         </select>
 
                         <label>border-bottom:</label>
-                        <input style="width: 50px;" id="seletot_border-bottom:" type="text">
+                        <input id="seletot_border-bottom:" type="text">
                         <input type="button" value="aplicar" onclick="funcao">
                         </select>
 
                         <label>border-left:</label>
-                        <input style="width: 50px;" id="seletot_border-left:" type="text">
+                        <input id="seletot_border-left:" type="text">
                         <input type="button" value="aplicar" onclick="funcao">
                         </select>
 
                         <label>border-right:</label>
-                        <input style="width: 50px;" id="seletot_border-right:" type="text">
+                        <input id="seletot_border-right:" type="text">
                         <input type="button" value="aplicar" onclick="funcao">
                         </select>
 
                         <label>border-top:</label>
-                        <input style="width: 50px;" id="seletot_border-top:" type="text">
+                        <input id="seletot_border-top:" type="text">
                         <input type="button" value="aplicar" onclick="funcao">
                         </select>
 
                         <label>border-solid:</label>
-                        <input style="width: 50px;" id="seletot_border-solid:" type="text">
+                        <input id="seletot_border-solid:" type="text">
                         <input type="button" value="aplicar" onclick="funcao">
                         </select>
                     </div>
@@ -461,7 +465,7 @@
                 <p style="color: rgb(174, 174, 0);" id="classbody">Body{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="bodywidth">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodyheight">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodybackgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodybackground-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodydisplay">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="bodyflexWrap">flexWrap:</p>
@@ -489,11 +493,11 @@
                 <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="body"></p>
                 <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="body"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classheader">header{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="headerwidth">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerheight">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerbackgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerbackground-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerdisplay">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="headerflexWrap">flexWrap:</p>
@@ -523,11 +527,11 @@
                 <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="header"></p>
                 <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="header"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classmain">main{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="mainwidth">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainheight">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainbackgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainbackground-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="maindisplay">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="mainflexWrap">flexWrap:</p>
@@ -555,11 +559,11 @@
                 <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="main"></p>
                 <p style="color: rgb(174, 174, 0);margin-left: 20px; display: none;" id="main"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classdiv_1">div_1{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_1width">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1height">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1backgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1background-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1display">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_1flexWrap">flexWrap:</p>
@@ -590,11 +594,11 @@
                 <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1"></p>
                 <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_1"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classdiv_2">div_2{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_2width">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2height">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2backgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2background-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2display">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_2flexWrap">flexWrap:</p>
@@ -623,11 +627,11 @@
                 <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2"></p>
                 <p style="color:rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_2"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classdiv_3">div_3{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_3width">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3height">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3backgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3background-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3display">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_3flexWrap">flexWrap:</p>
@@ -659,11 +663,11 @@
                 <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3"></p>
                 <p style="color: rgb(3, 143, 194);;margin-left: 20px; display: none;" id="div_3"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classdiv_4">div_4{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_4width">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4height">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4backgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4background-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4display">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4flexWrap">flexWrap:</p>
@@ -692,11 +696,11 @@
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4"></p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_4"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classdiv_5">div_5{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_5width">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5height">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5backgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5background-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5display">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5flexWrap">flexWrap:</p>
@@ -725,11 +729,11 @@
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5"></p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_5"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classdiv_6">div_6{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="div_6width">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6height">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6backgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6background-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6display">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6flexWrap">flexWrap:</p>
@@ -758,11 +762,11 @@
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6"></p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="div_6"></p>
                 <p style="color: rgb(174, 174, 0);">}</p>
-            <br>
+                <br>
                 <p style="color: rgb(174, 174, 0);" id="classfooter">footer{</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px;display: none;" id="footerwidth">sdfsd</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerheight">height: ;</p>
-                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerbackgroundColor">
+                <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerbackground-color">
                     background-color: ;</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerdisplay">display:</p>
                 <p style="color: rgb(3, 143, 194);margin-left: 20px; display: none;" id="footerflexWrap">flexWrap:</p>

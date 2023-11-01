@@ -1,166 +1,151 @@
 * {
     padding: 0;
     margin: 0;
-    
-    
-}
-body{
-    max-width: 1250px;
-    heigth:100%;
-    background-color: grey;
-}
-header {
-    width: 100%;
-    height: 70px;
-    background-color: rgba(0, 0, 0, 0.734);
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10px;
-    box-shadow:0 0 10px rgb(255, 217, 0);
-    border-bottom: solid rgb(255, 217, 0);
-    color: white;
-}
-.topo{
-  width: auto;
-  display: inline-block;
-  justify-content: center center;
-  padding-top: 30px;
-  margin: auto;
-}
-.topo input{
-    width: 50px;
-}
-.topo label,select{
-    width: 50px;
+
+
 }
 
-main {
-    
-    display: flex;
-    
-    
-    
+body {
+    width: 100vw;
+    background-color: rgb(55, 0, 0);
+    max-width: 1250px;
+    height: 100%;
 }
+
+header {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+
+}
+
+.topo {
+
+    width: 100px;
+    height: 45px;
+    display: block;
+    justify-content: center center;
+    text-align: center;
+    border-radius: 20px;
+    border: solid;
+    margin: 10px;
+    background-color: #000000;
+}
+
+
+main {
+    width: 100vw;
+    display: flex;
+    background-color: rgb(55, 0, 0);
+
+
+
+}
+
 .guia {
     overflow: auto;
-    margin: 10px;     
+    margin: 10px;
     width: 25%;
     height: 550px;
     background-color: rgb(0, 0, 0);
-    box-shadow:0 0 10px rgb(255, 217, 0);
-    border-bottom: solid rgb(255, 217, 0);
+    box-shadow: 0 0 10px rgb(255, 217, 0);
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
-    
+
 }
-#estrutura_div{
+
+#estrutura_div {
     background-image: url(/estrutura.png);
     background-size: cover;
     min-width: 250px;
 
 }
-.seletores{
-   width:100%;
-   min-width: 250px;
-   border: solid white;
-   margin: 10px; 
-   overflow: auto;
-   
+
+.seletores {
+    width: 100%;
+    min-width: 250px;
+    border: solid white;
+    margin: 10px;
+    overflow: auto;
+
 }
-#border_on label{
+
+#border_on label {
     color: white;
     margin-left: 10px;
 }
-#visorbody{
-min-width: 250px;
-width: 100%;
-height: 500px;
-order: 1;
-border: solid white;
-margin: 10px;
-background-color: rgb(25, 27, 30);
-overflow: auto;
-}
-#estrutura_div{
-  width: calc(100%-10px);
-  min-height: 200px;
-  border: solid white;
-  margin: 10px; 
-  
-  background-size: 100%;
+
+#visorbody {
+    min-width: 250px;
+    width: 100%;
+    height: 500px;
+    order: 1;
+    border: solid white;
+    margin: 10px;
+    background-color: rgb(25, 27, 30);
+    overflow: auto;
 }
 
-.janela{
+#estrutura_div {
+    width: calc(100%-10px);
+    min-height: 200px;
+    border: solid white;
+    margin: 10px;
+
+    background-size: 100%;
+}
+
+.janela {
     width: 75%;
     height: 550px;
-    margin: 10px; 
-    border: solid white;    
+    margin: 10px;
+    border: solid rgb(0, 0, 0);
     background-color: white;
-    background-size: cover;
-    display: grid;
-    grid-template-columns: 33px auto;
-    grid-template-rows: 63px auto;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
     overflow: auto;
-    
-}
-.navegacao_janela{
-    
-    width: 104%;
-    background-size: cover;
-    margin-left: -33px;
-    grid-column: 2;
-    grid-row: 1;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    
-}
 
-#tela{
-    margin-top: 63px;
-    grid-row: 2;
-    grid-column: 1/3;
-    background-color: aqua;
+
 }
 
 footer {
-    
+    text-align: center;
+    color: white;
     background-color: rgba(0, 0, 0, 0.734);
 }
+
+
 @media only screen and (max-width: 480px) {
-    body{
-        max-width: 480px;
-        background-color: rgb(65, 43, 43);
-    }
-    header{
+    header {
         margin: 0;
-        width: 480px;
+        width: 100vw;
         border: none;
         box-shadow: none;
-        height: 100px;
         position: sticky;
         top: 0;
         background-color: #000000;
     }
-    .topo{
-        margin: 10px;}
-    
-    main{
+
+
+
+    main {
+
         display: block;
     }
-    .janela{
+
+    .janela {
         margin: 0;
-        width: 480px;
+        width: 100vw;
         height: 250px;
         position: sticky;
-        top: 100px;
+        top: 135px;
         border-bottom: solid black;
     }
-    .guia{
-        width: 100%;
+
+    .guia {
+        width: calc(100vw - 20px);
     }
 }
-
-
-
