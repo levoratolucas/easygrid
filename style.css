@@ -7,7 +7,7 @@
 
 body {
     width: 100vw;
-    background-color: rgb(55, 0, 0);
+    background-color: rgba(0, 0, 0, 0.933);
     max-width: 1250px;
     height: 100%;
 }
@@ -19,6 +19,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     color: white;
+    z-index: 1;
 
 }
 
@@ -37,9 +38,9 @@ header {
 
 
 main {
-    width: 100vw;
+    width: 99vw;
     display: flex;
-    background-color: rgb(55, 0, 0);
+    
 
 
 
@@ -49,13 +50,60 @@ main {
     overflow: auto;
     margin: 10px;
     width: 25%;
-    height: 550px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(25, 27, 30);
+    border: solid white;
     box-shadow: 0 0 10px rgb(255, 217, 0);
     border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
 
+}
+
+.editor {
+    display: flex;
+    width: 99vw;
+}
+
+#visor_html {
+    width: 25%;
+    height: 500px;
+    border: solid white;
+    box-shadow: 0 0 10px rgb(255, 217, 0);
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgb(25, 27, 30);
+
+    color: rgb(3, 143, 194);
+}
+
+#html {
+
+    height: 442px;
+    background-color: rgb(25, 27, 30);
+    color: rgb(87, 182, 217);
+    font-size: 15px;
+}
+
+.editorcss {
+    width: 75%;
+    height: 500px;
+    border: solid white;
+    box-shadow: 0 0 10px rgb(255, 217, 0);
+    border-radius: 20px;
+    margin: 10px;
+    background-color: rgb(25, 27, 30);
+    overflow: auto;
+
+}
+
+#css_view {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#css_view div {
+    min-width: 100px;
+    padding: 5px;
 }
 
 #estrutura_div {
@@ -70,6 +118,7 @@ main {
     min-width: 250px;
     border: solid white;
     margin: 10px;
+
     overflow: auto;
 
 }
@@ -79,16 +128,8 @@ main {
     margin-left: 10px;
 }
 
-#visorbody {
-    min-width: 250px;
-    width: 100%;
-    height: 500px;
-    order: 1;
-    border: solid white;
-    margin: 10px;
-    background-color: rgb(25, 27, 30);
-    overflow: auto;
-}
+
+
 
 #estrutura_div {
     width: calc(100%-10px);
@@ -112,9 +153,13 @@ main {
 }
 
 footer {
+    height: 30px;
+    width: 99vw;
+    margin: auto;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.734);
+    background-color: rgb(0, 0, 0);
+
 }
 
 
@@ -141,11 +186,31 @@ footer {
         width: 100vw;
         height: 250px;
         position: sticky;
-        top: 135px;
+        top: 210px;
         border-bottom: solid black;
     }
 
     .guia {
         width: calc(100vw - 20px);
     }
+
+    .editor {
+        display: block;
+        width: 99vw;
+    }
+
+    .editorcss {
+        width: 92%;
+    }
+
+    #visor_html {
+        width: 92%;
+        height: 500px;
+    }
+}
+
+h4 {
+    text-align: center;
+    color: white;
+    border-bottom: solid white;
 }
