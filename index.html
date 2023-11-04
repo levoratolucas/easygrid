@@ -58,7 +58,8 @@
         }
     </style>
 </head>
-<body>    
+
+<body>
     <header>
         <div class="topo">
             <label for="">seletor:</label><br>
@@ -199,7 +200,7 @@
 
                 </div>
                 <div id="main">
-                    
+
                 </div>
                 <div id="footer">
 
@@ -283,7 +284,7 @@
                             <h4>display</h4>
                         </label><br>
                         <label for="seletor_grid_template_columns">Grid-template-columns:</label>
-                        <select id="seletor_grid_template_columns" onchange="set_grid_template_columns()">
+                        <select id="seletor_grid_template_columns" onchange="global('grid_template_columns')">
                             <option value="none">none</option>
                             <option value="auto">auto</option>
                             <option value="1fr">1fr</option>
@@ -383,30 +384,21 @@
                         <label for="">
                             <h4>Bordas</h4>
                         </label>
-                        <br><label>border-radius:</label>
-                        <input id="seletot_border-radius:" type="text">
-                        <input type="button" value="aplicar" onclick="set_border_radius()">
-                        </select>
-                        <label>border-bottom:</label>
-                        <input id="seletot_border-bottom:" type="text">
-                        <input type="button" value="aplicar" onclick="funcao">
-                        </select>
-                        <label>border-left:</label>
-                        <input id="seletot_border-left:" type="text">
-                        <input type="button" value="aplicar" onclick="funcao">
-                        </select>
-                        <label>border-right:</label>
-                        <input id="seletot_border-right:" type="text">
-                        <input type="button" value="aplicar" onclick="funcao">
-                        </select>
-                        <label>border-top:</label>
-                        <input id="seletot_border-top:" type="text">
-                        <input type="button" value="aplicar" onclick="funcao">
-                        </select>
-                        <label>border-solid:</label>
-                        <input id="seletot_border-solid:" type="text">
-                        <input type="button" value="aplicar" onclick="funcao">
-                        </select>
+                        <br><label>border-solid:</label>
+                        <input id="border-radius" type="text">
+                        <input type="button" value="aplicar" onclick="global('border-radius')">
+                        <br><label>border-top:</label>
+                        <input id="border-top" type="text">
+                        <input type="button" value="aplicar" onclick="global('border-top')">
+                        <br><label>border-bottom:</label>
+                        <input id="border-bottom" type="text">
+                        <input type="button" value="aplicar" onclick="global('border-bottom')">
+                        <br><label>border-left:</label>
+                        <input id="border-left" type="text">
+                        <input type="button" value="aplicar" onclick="global('border-left')">
+                        <br><label>border-right:</label>
+                        <input id="border-right" type="text">
+                        <input type="button" value="aplicar" onclick="global('border-right')">
                     </div>
                 </div>
             </div>
@@ -444,7 +436,7 @@
         </div>
         <div id="visor_html">
             <h4>HTML</h4>
-            <pre id="html" class="language-html" ><code></code></pre>
+            <pre id="html" class="language-html"><code></code></pre>
         </div>
     </div>
     <footer>
@@ -452,4 +444,5 @@
     </footer>
     <script src="teste.js"></script>
 </body>
+
 </html>

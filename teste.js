@@ -80,7 +80,7 @@ function global(atributo) { // atributo do css que vai ser aplicado
     }
     else {
         const css = document.getElementById(atributo).value // valor que o tibuto vai receber
-        if (document.getElementById(atributo).value === "null") {
+        if (document.getElementById(atributo).value === "null" ) {
             document.getElementById(elemento + atributo).style.display = "none";
         }
         else if (document.getElementById(elemento + atributo)) {// este if verifica se existe a linha pra modiificar o texto
@@ -104,7 +104,7 @@ function global(atributo) { // atributo do css que vai ser aplicado
 }
 function criarelemento() {
     elemento = document.getElementById("elemento").value 
-    if(elemento !== 'null'){
+    if(elemento !== 'null' ){
     var add = document.getElementById('criadorelemento').value;// input nome do elemento
     var divNome = "local" + add;
     var sectionNome = "visor" + add;
