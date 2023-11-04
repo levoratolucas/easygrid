@@ -63,7 +63,7 @@
         <div class="topo">
             <label for="">seletor:</label><br>
             <select id="elemento">
-                <option value="none">Elemento:</option>
+                <option value="null">Elemento:</option>
                 <option value="body">body</option>
                 <option value="header">header</option>
                 <option value="main">main</option>
@@ -163,6 +163,7 @@
         <div class="topo">
             <label for="display">Display:</label><br>
             <select id="display" onchange="global('display'),display()">
+                <option value="null">null</option>
                 <option value="none">none</option>
                 <option value="flex">flex</option>
                 <option value="grid">grid</option>
@@ -173,8 +174,8 @@
         </div>
         <div class="topo">
             <label for="border">Border:</label><br>
-            <select id="border" onchange="global('border')">
-                <option value="none">none</option>
+            <select id="border" onchange="border(),global('border')">
+                <option value="null">null</option>
                 <option value="ativa">ativa</option>
                 <!-- <option value="dashed">dashed</option>
         <option value="dotted">dotted</option>
