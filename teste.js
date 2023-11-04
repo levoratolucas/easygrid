@@ -12,7 +12,7 @@ function display() {
         "none": "none_on",
         "table": "table_on",
         "inline-flex": "inline_flex_on",
-        // Adicione outros valores conforme necessário
+        
     };
 
     for (var key in elements) {
@@ -29,7 +29,7 @@ function background() {
         "image": "image_on",
         "size": "size_on",
         "repeat": "repeat_on",
-        // Adicione outros valores conforme necessário
+        
     };
 
     for (var key in elements) {
@@ -59,7 +59,7 @@ function border() {
         "top-right-radius": "top_right_radius_on",
         "bottom-left-radius": "bottom_left_radius_on",
         "bottom-right-radius": "bottom_right_radius_on"
-        // Adicione outras propriedades conforme necessário
+        
     };
 
     for (var key in elements) {
