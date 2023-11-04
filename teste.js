@@ -3,31 +3,71 @@ document.getElementById('html').querySelector('code').innerText = html;
 
 function display() {
     elemento = document.getElementById("display").value
-    var flexOn = document.getElementById("flex_on");
-    var gridOn = document.getElementById("grid_on");
+    var elements = {
+        "flex": "flex_on",
+        "grid": "grid_on",
+        "block": "block_on",
+        "inline": "inline_on",
+        "inline-block": "inline_block_on",
+        "none": "none_on",
+        "table": "table_on",
+        "inline-flex": "inline_flex_on",
+        // Adicione outros valores conforme necessário
+    };
 
-    if (elemento === "flex") {
-        flexOn.style.display = "block";
-        gridOn.style.display = "none";
-    } else if (elemento === "grid") {
-        flexOn.style.display = "none";
-        gridOn.style.display = "block";
-    } else {
-        flexOn.style.display = "none";
-        gridOn.style.display = "none";
-    }
-
-    if (elemento === "flex") {
-        flexOn.style.display = "block";
-        gridOn.style.display = "none";
-    } else if (elemento === "grid") {
-        flexOn.style.display = "none";
-        gridOn.style.display = "block";
-    } else {
-        flexOn.style.display = "none";
-        gridOn.style.display = "none";
+    for (var key in elements) {
+        var element = document.getElementById(elements[key]);
+        element.style.display = (key === elemento) ? key : "none";
     }
 }
+
+
+function background() {
+    var elemento = document.getElementById("background").value;
+    var elements = {
+        "color": "color_on",
+        "image": "image_on",
+        "size": "size_on",
+        "repeat": "repeat_on",
+        // Adicione outros valores conforme necessário
+    };
+
+    for (var key in elements) {
+        var element = document.getElementById(elements[key]);
+        element.style.display = (key === elemento) ? key : "none";
+    }
+}
+
+
+function border() {
+    var elemento = document.getElementById("border").value;
+    var elements = {
+        "width": "width_on",
+        "style": "style_on",
+        "color": "color_on",
+        "radius": "radius_on",
+        "full": "full_on",
+        "top": "top_on",
+        "right": "right_on",
+        "bottom": "bottom_on",
+        "left": "left_on",
+        "image": "image_on",
+        "collapse": "collapse_on",
+        "spacing": "spacing_on",
+        "outline": "outline_on",
+        "top-left-radius": "top_left_radius_on",
+        "top-right-radius": "top_right_radius_on",
+        "bottom-left-radius": "bottom_left_radius_on",
+        "bottom-right-radius": "bottom_right_radius_on"
+        // Adicione outras propriedades conforme necessário
+    };
+
+    for (var key in elements) {
+        var element = document.getElementById(elements[key]);
+        element.style.display = (key === elemento) ? key : "none";
+    }
+}
+
 function global(atributo) { // atributo do css que vai ser aplicado
 
     elemento = document.getElementById("elemento").value // elemento que vai receber atributo
