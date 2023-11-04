@@ -79,7 +79,7 @@
         </div>
         <div class="topo">
             <label for="">Width:</label><br>
-            <select name="" id="width" onchange="global('width')">
+            <select name="" id="width" onclick="global('width')">
                 <option value="">Width</option>
                 <option value="10px">10px</option>
                 <option value="20px">20px</option>
@@ -110,7 +110,7 @@
         </div>
         <div class="topo">
             <label>Height:</label><br>
-            <select name="" id="height" onchange="global('height')">
+            <select name="" id="height" onclick="global('height')">
                 <option value="">Height</option>
                 <option value="10px">10px</option>
                 <option value="20px">20px</option>
@@ -141,8 +141,8 @@
         </div>
         <div class="topo">
             <label>Background:</label><br>
-            <select id="background-color" onchange="global('background-color')">
-                <option value="none">none</option>
+            <select id="background-color" onclick="global('background-color')">
+                <option value="null">none</option>
                 <option value="white">white</option>
                 <option value="red">red</option>
                 <option value="blue">blue</option>
@@ -164,9 +164,9 @@
         </div>
         <div class="topo">
             <label for="display">Display:</label><br>
-            <select id="display" onchange="global('display'),display()">
+            <select id="display" onclick="global('display'),display()">
                 <option value="null">null</option>
-                <option value="none">none</option>
+                <option value="null">null</option>
                 <option value="flex">flex</option>
                 <option value="grid">grid</option>
                 <option value="block">block</option>
@@ -176,7 +176,7 @@
         </div>
         <div class="topo">
             <label for="border">Border:</label><br>
-            <select id="border" onchange="border(),global('border')">
+            <select id="border" onclick="border(),global('border')">
                 <option value="null">null</option>
                 <option value="ativa">ativa</option>
                 <!-- <option value="dashed">dashed</option>
@@ -216,8 +216,8 @@
                             <h4>display</h4>
                         </label><br>
                         <label>Flex-wrap:</label>
-                        <select id="flex-wrap" onchange="global('flex-wrap')">
-                            <option value="red">null</option>
+                        <select id="flex-wrap" onclick="global('flex-wrap')">
+                            <option value="null">null</option>
                             <option value="wrap">wrap</option>
                             <option value="nowrap">nowrap</option>
                             <option value="wrap-reverse">wrap-reverse</option>
@@ -227,8 +227,8 @@
                     </div>
                     <div class="campos">
                         <label for="flex-direction">Flex-direction:</label>
-                        <select id="flex-direction" onchange="global('flex-direction')">
-                            <option value="none">none</option>
+                        <select id="flex-direction" onclick="global('flex-direction')">
+                            <option value="null">null</option>
                             <option value="row">row</option>
                             <option value="row-reverse">row-reverse</option>
                             <option value="column">column</option>
@@ -239,8 +239,8 @@
                     </div>
                     <div class="campos">
                         <label for="justify-content">Justify-content:</label>
-                        <select id="justify-content" onchange="global('justify-content')">
-                            <option value="none">none</option>
+                        <select id="justify-content" onclick="global('justify-content')">
+                            <option value="null">null</option>
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
                             <option value="center">center</option>
@@ -253,8 +253,8 @@
                     </div>
                     <div class="campos">
                         <label for="align-items">Align-items:</label>
-                        <select id="align-items" onchange="global('align-items')">
-                            <option value="none">none</option>
+                        <select id="align-items" onclick="global('align-items')">
+                            <option value="null">null</option>
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
                             <option value="center">center</option>
@@ -266,8 +266,8 @@
                     </div>
                     <div class="campos">
                         <label for="align-content">Align-content:</label>
-                        <select id="align-content" onchange="global('align-content')">
-                            <option value="none">none</option>
+                        <select id="align-content" onclick="global('align-content')">
+                            <option value="null">null</option>
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
                             <option value="center">center</option>
@@ -285,8 +285,8 @@
                             <h4>display</h4>
                         </label><br>
                         <label for="seletor_grid_template_columns">Grid-template-columns:</label>
-                        <select id="seletor_grid_template_columns" onchange="global('grid_template_columns')">
-                            <option value="none">none</option>
+                        <select id="seletor_grid_template_columns" onclick="global('grid_template_columns')">
+                            <option value="null">null</option>
                             <option value="auto">auto</option>
                             <option value="1fr">1fr</option>
                             <option value="2fr">2fr</option>
@@ -299,8 +299,8 @@
                     </div>
                     <div class="campos">
                         <label for="seletor_grid_template_rows">Grid-template-rows:</label>
-                        <select id="seletor_grid_template_rows" onchange="set_grid_template_rows()">
-                            <option value="none">none</option>
+                        <select id="seletor_grid_template_rows" onclick="set_grid_template_rows()">
+                            <option value="null">null</option>
                             <option value="auto">auto</option>
                             <option value="1fr">1fr</option>
                             <option value="2fr">2fr</option>
@@ -313,8 +313,8 @@
                     </div>
                     <div class="campos">
                         <label for="seletor_gap_colunm">Grid-column-gap:</label>
-                        <select id="seletor_gap_colunm" onchange="set_gap_colunm()">
-                            <option value="none">none</option>
+                        <select id="seletor_gap_colunm" onclick="set_gap_colunm()">
+                            <option value="null">null</option>
                             <option value="10px">10px</option>
                             <option value="20px">20px</option>
                             <option value="30px">30px</option>
@@ -322,8 +322,8 @@
                     </div>
                     <div class="campos">
                         <label for="seletor_gap_row">Grid-row-gap:</label>
-                        <select id="seletor_gap_row" onchange="set_gap_row()">
-                            <option value="none">none</option>
+                        <select id="seletor_gap_row" onclick="set_gap_row()">
+                            <option value="null">null</option>
                             <option value="10px">10px</option>
                             <option value="20px">20px</option>
                             <option value="30px">30px</option>
@@ -331,8 +331,8 @@
                     </div>
                     <!--<<div class="campos">
                         <label for="seletor_gap">Grid-column:</label>
-                        <select id="seletor_grap" onchange="set_gap()">
-                            <option value="none">none</option>
+                        <select id="seletor_grap" onclick="set_gap()">
+                            <option value="null">null</option>
                             <option value="10px">10px</option>
                             <option value="20px">20px</option>
                             <option value="30px">30px</option>
@@ -341,41 +341,41 @@
                     div class="campos">
                         <label for="seletor_grid_row">Grid-row:</label>
                         <select id="seletor_grid_row">
-                            <option value="none">none</option>
+                            <option value="null">null</option>
                             <option value="span 2">span 2 - Ocupa duas linhas</option>                           
                         </select>
                     </div>
                     <div class="campos">
                         <label for="seletor_grid_area">Grid-area:</label>
                         <select id="seletor_grid_area">
-                            <option value="none">none</option>
+                            <option value="null">null</option>
                             <option value="area">area - Atribui a área especificada</option>
                         </select>-->
                     <div class="campos">
                         <label for="seletor_justify_items">Justify-items:</label>
-                        <select id="seletor_justify_items" onchange="set_justify_items()">
-                            <option value="none">none</option>
+                        <select id="seletor_justify_items" onclick="set_justify_items()">
+                            <option value="null">null</option>
                             <option value="start">start - Alinha no início do contêiner</option>
                         </select>
                     </div>
                     <div class="campos">
                         <label for="seletor_align_items">Align-items:</label>
-                        <select id="seletor_align_items" onchange="set_align_items()">
-                            <option value="none">none</option>
+                        <select id="seletor_align_items" onclick="set_align_items()">
+                            <option value="null">null</option>
                             <option value="start">start - Alinha no início do contêiner</option>
                         </select>
                     </div>
                     <div class="campos">
                         <label for="seletor_justify_content">Justify-content:</label>
-                        <select id="seletor_justify_content" onchange="set_justify_content()">
-                            <option value="none">none</option>
+                        <select id="seletor_justify_content" onclick="set_justify_content()">
+                            <option value="null">null</option>
                             <option value="start">start - Alinha no início do contêiner</option>
                         </select>
                     </div>
                     <div class="campos">
                         <label for="seletor_align_content">Align-content:</label>
-                        <select id="seletor_align_content" onchange="set_align_content()">
-                            <option value="none">none</option>
+                        <select id="seletor_align_content" onclick="set_align_content()">
+                            <option value="null">null</option>
                             <option value="start">start</option>
                         </select>
                     </div>
