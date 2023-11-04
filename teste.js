@@ -68,6 +68,23 @@ function border() {
     }
 }
 
+
+function margin() {
+    var elemento = document.getElementById("border").value;
+    var elementIds = {
+        "marginTop": "margin_top_on",
+        "marginBottom": "margin_bottom_on",
+        "marginLeft": "margin_left_on",
+        "marginRight": "margin_right_on",
+        "margin": "margin_all_on"
+    };
+
+    for (var key in elementIds) {
+        var element = document.getElementById(elementIds[key]);
+        element.style.display = (key === elemento) ? key : "none";
+    }
+}
+
 function global(atributo) { // atributo do css que vai ser aplicado
 
     elemento = document.getElementById("elemento").value // elemento que vai receber atributo
