@@ -103,6 +103,8 @@ function global(atributo) { // atributo do css que vai ser aplicado
     }
 }
 function criarelemento() {
+    elemento = document.getElementById("elemento").value 
+    if(elemento !== 'null'){
     var add = document.getElementById('criadorelemento').value;// input nome do elemento
     var divNome = "local" + add;
     var sectionNome = "visor" + add;
@@ -137,4 +139,6 @@ function criarelemento() {
     opt.value = add;
     opt.innerText = add;
     document.getElementById('elemento').appendChild(opt);
+    }
+    else{return}
 }
