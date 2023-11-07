@@ -1,70 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
     <link rel="stylesheet" href="style.css">
     <title>easygrid</title>
-    <style>
-        #flex_on {
-            display: none;
-            width: calc(100% - 10px);
-            background-color: rgb(25, 27, 30);
-            color: white;
-            padding: 5px;
-
-            border-bottom: solid;
-        }
-
-        #border_on {
-            display: none;
-            width: calc(100%);
-            height: calc(100% - 10px);
-            background-color: rgb(25, 27, 30);
-            color: white;
-            padding: 5px;
-        }
-
-        #flex_on select {
-            max-width: 90px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        #flex_on label {
-            margin-left: 10px;
-        }
-
-        .campos label {
-            width: 100px;
-            display: inline-block;
-            justify-content: space-around;
-        }
-
-
-        #grid_on {
-            display: none;
-            width: calc(100% - 20px);
-            border-bottom: solid white;
-            background-color: rgb(25, 27, 30);
-            color: white;
-            padding: 10px;
-        }
-
-        #grid_on label {
-            border-bottom: solid white;
-        }
-    </style>
 </head>
-
 <body>
     <header>
         <div class="topo">
-            <label for="">seletor:</label><br>
+            <label for="elemento">seletor:</label><br>
             <select id="elemento">
-                <option value="null">Elemento:</option>
+                <option value="">Elemento:</option>
                 <option value="body">body</option>
                 <option value="header">header</option>
                 <option value="main">main</option>
@@ -109,7 +57,7 @@
             </select>
         </div>
         <div class="topo">
-            <label>Height:</label><br>
+            <label for="height">Height:</label><br>
             <select name="" id="height" onclick="global('height')">
                 <option value="">Height</option>
                 <option value="10px">10px</option>
@@ -140,7 +88,7 @@
             </select>
         </div>
         <div class="topo">
-            <label>Background:</label><br>
+            <label for="background-color">Background:</label><br>
             <select id="background-color" onclick="global('background-color')">
                 <option value="null">none</option>
                 <option value="white">white</option>
@@ -166,7 +114,6 @@
             <label for="display">Display:</label><br>
             <select id="display" onclick="global('display'),display()">
                 <option value="null">null</option>
-                <option value="null">null</option>
                 <option value="flex">flex</option>
                 <option value="grid">grid</option>
                 <option value="block">block</option>
@@ -180,17 +127,17 @@
                 <option value="null">null</option>
                 <option value="ativa">ativa</option>
                 <!-- <option value="dashed">dashed</option>
-        <option value="dotted">dotted</option>
-        <option value="double">double</option>
-        <option value="groove">groove</option>
-        <option value="ridge">ridge</option>
-        <option value="inset">inset</option>
-        <option value="outset">outset</option>
-         -->
+                <option value="dotted">dotted</option>
+                <option value="double">double</option>
+                <option value="groove">groove</option>
+                <option value="ridge">ridge</option>
+                <option value="inset">inset</option>
+                <option value="outset">outset</option>
+                -->
             </select>
         </div>
         <div class="topo">
-            <input type="button" value="add elemneto:" onclick="criarelemento()"></label>
+            <button type="button" onclick="criarelemento()">Adicionar elemento</button>
             <input type="text" id="criadorelemento">
         </div>
     </header>
@@ -212,71 +159,72 @@
             <div class="seletores">
                 <div id="flex_on">
                     <div class="campos">
-                        <label for="">
-                            <h4>display</h4>
-                        </label><br>
-                        <label>Flex-wrap:</label>
-                        <select id="flex-wrap" onclick="global('flex-wrap')">
-                            <option value="null">null</option>
-                            <option value="wrap">wrap</option>
-                            <option value="nowrap">nowrap</option>
-                            <option value="wrap-reverse">wrap-reverse</option>
-                            <option value="inherit">inherit</option>
-                            <option value="initial">initial</option>
-                        </select>
-                    </div>
-                    <div class="campos">
-                        <label for="flex-direction">Flex-direction:</label>
-                        <select id="flex-direction" onclick="global('flex-direction')">
-                            <option value="null">null</option>
-                            <option value="row">row</option>
-                            <option value="row-reverse">row-reverse</option>
-                            <option value="column">column</option>
-                            <option value="column-reverse">column-reverse</option>
-                            <option value="inherit">inherit</option>
-                            <option value="initial">initial</option>
-                        </select>
-                    </div>
-                    <div class="campos">
-                        <label for="justify-content">Justify-content:</label>
-                        <select id="justify-content" onclick="global('justify-content')">
-                            <option value="null">null</option>
-                            <option value="flex-start">flex-start</option>
-                            <option value="flex-end">flex-end</option>
-                            <option value="center">center</option>
-                            <option value="space-between">space-between</option>
-                            <option value="space-around">space-around</option>
-                            <option value="space-evenly">space-evenly</option>
-                            <option value="inherit">inherit</option>
-                            <option value="initial">initial</option>
-                        </select>
-                    </div>
-                    <div class="campos">
-                        <label for="align-items">Align-items:</label>
-                        <select id="align-items" onclick="global('align-items')">
-                            <option value="null">null</option>
-                            <option value="flex-start">flex-start</option>
-                            <option value="flex-end">flex-end</option>
-                            <option value="center">center</option>
-                            <option value="baseline">baseline</option>
-                            <option value="stretch">stretch</option>
-                            <option value="inherit">inherit</option>
-                            <option value="initial">initial</option>
-                        </select>
-                    </div>
-                    <div class="campos">
-                        <label for="align-content">Align-content:</label>
-                        <select id="align-content" onclick="global('align-content')">
-                            <option value="null">null</option>
-                            <option value="flex-start">flex-start</option>
-                            <option value="flex-end">flex-end</option>
-                            <option value="center">center</option>
-                            <option value="space-between">space-between</option>
-                            <option value="space-around">space-around</option>
-                            <option value="stretch">stretch</option>
-                            <option value="inherit">inherit</option>
-                            <option value="initial">initial</option>
-                        </select>
+                        <h4>Display</h4>
+                        <br>
+                        <div class="grupo-input">
+                            <label>Flex-wrap:</label>
+                            <select id="flex-wrap" onclick="global('flex-wrap')">
+                                <option value="null">null</option>
+                                <option value="wrap">wrap</option>
+                                <option value="nowrap">nowrap</option>
+                                <option value="wrap-reverse">wrap-reverse</option>
+                                <option value="inherit">inherit</option>
+                                <option value="initial">initial</option>
+                            </select>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="flex-direction">Flex-direction:</label>
+                            <select id="flex-direction" onclick="global('flex-direction')">
+                                <option value="null">null</option>
+                                <option value="row">row</option>
+                                <option value="row-reverse">row-reverse</option>
+                                <option value="column">column</option>
+                                <option value="column-reverse">column-reverse</option>
+                                <option value="inherit">inherit</option>
+                                <option value="initial">initial</option>
+                            </select>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="justify-content">Justify-content:</label>
+                            <select id="justify-content" onclick="global('justify-content')">
+                                <option value="null">null</option>
+                                <option value="flex-start">flex-start</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="center">center</option>
+                                <option value="space-between">space-between</option>
+                                <option value="space-around">space-around</option>
+                                <option value="space-evenly">space-evenly</option>
+                                <option value="inherit">inherit</option>
+                                <option value="initial">initial</option>
+                            </select>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="align-items">Align-items:</label>
+                            <select id="align-items" onclick="global('align-items')">
+                                <option value="null">null</option>
+                                <option value="flex-start">flex-start</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="center">center</option>
+                                <option value="baseline">baseline</option>
+                                <option value="stretch">stretch</option>
+                                <option value="inherit">inherit</option>
+                                <option value="initial">initial</option>
+                            </select>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="align-content">Align-content:</label>
+                            <select id="align-content" onclick="global('align-content')">
+                                <option value="null">null</option>
+                                <option value="flex-start">flex-start</option>
+                                <option value="flex-end">flex-end</option>
+                                <option value="center">center</option>
+                                <option value="space-between">space-between</option>
+                                <option value="space-around">space-around</option>
+                                <option value="stretch">stretch</option>
+                                <option value="inherit">inherit</option>
+                                <option value="initial">initial</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div id="grid_on">
@@ -382,24 +330,34 @@
                 </div>
                 <div id="border_on">
                     <div class="campos">
-                        <label for="">
-                            <h4>Bordas</h4>
-                        </label>
-                        <br><label>border-radius:</label>
-                        <input id="border-radius" type="text">
-                        <input type="button" value="aplicar" onclick="global('border-radius')">
-                        <br><label>border-top:</label>
-                        <input id="border-top" type="text">
-                        <input type="button" value="aplicar" onclick="global('border-top')">
-                        <br><label>border-bottom:</label>
-                        <input id="border-bottom" type="text">
-                        <input type="button" value="aplicar" onclick="global('border-bottom')">
-                        <br><label>border-left:</label>
-                        <input id="border-left" type="text">
-                        <input type="button" value="aplicar" onclick="global('border-left')">
-                        <br><label>border-right:</label>
-                        <input id="border-right" type="text">
-                        <input type="button" value="aplicar" onclick="global('border-right')">
+                        <h4>Bordas</h4>
+                        
+                        <br>
+                        <div class="grupo-input">
+                            <label for="border-radius">border-radius:</label>
+                            <input id="border-radius" type="text" />
+                            <button type="button" onclick="global('border-radius')">Aplicar</button>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="border-top">border-top:</label>
+                            <input id="border-top" type="text" />
+                            <button type="button" onclick="global('border-top')">Aplicar</button>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="border-bottom">border-bottom:</label>
+                            <input id="border-bottom" type="text">
+                            <button type="button" onclick="global('border-bottom')">Aplicar</button>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="border-left">border-left:</label>
+                            <input id="border-left" type="text" />
+                            <button type="button" onclick="global('border-left')">Aplicar</button>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="border-right">border-right:</label>
+                            <input id="border-right" type="text" />
+                            <button type="button" onclick="global('border-right')">Aplicar</button>
+                        </div>
                     </div>
                 </div>
             </div>
