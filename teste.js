@@ -1,9 +1,9 @@
-var html = document.querySelector('.janela').innerHTML;
+const html = document.querySelector('.janela').innerHTML;
 document.getElementById('html').querySelector('code').innerText = html;
 
 function display() {
     elementodisplay = document.getElementById("display").value
-    var elements = {
+    const elements = {
         "flex": "flex_on",
         "grid": "grid_on",
         "block": "block_on",
@@ -15,8 +15,8 @@ function display() {
 
     };
 
-    for (var key in elements) {
-        var element = document.getElementById(elements[key]);
+    for (let key in elements) {
+        const element = document.getElementById(elements[key]);
 
         if (key === elementodisplay) {
             element.style.display = key;
@@ -27,27 +27,9 @@ function display() {
     }
 }
 
-
-function background() {
-    var elemento = document.getElementById("background").value;
-    var elements = {
-        "color": "color_on",
-        "image": "image_on",
-        "size": "size_on",
-        "repeat": "repeat_on",
-
-    };
-
-    for (var key in elements) {
-        var element = document.getElementById(elements[key]);
-        element.style.display = (key === elemento) ? key : "none";
-    }
-}
-
-
 function border() {
-    elemento = document.getElementById("elemento").value
-    var elementoborder = document.getElementById("border").value;
+    const elemento = document.getElementById("elemento").value
+    const elementoborder = document.getElementById("border").value;
     if (elementoborder === "ativa" && elemento !== 'null') {
         document.getElementById('border_on').style.display = 'block';
     }
@@ -57,8 +39,8 @@ function border() {
 }
 
 function margin() {
-    var elemento = document.getElementById("border").value;
-    var elementIds = {
+    const elemento = document.getElementById("border").value;
+    const elementIds = {
         "marginTop": "margin_top_on",
         "marginBottom": "margin_bottom_on",
         "marginLeft": "margin_left_on",
@@ -66,79 +48,77 @@ function margin() {
         "margin": "margin_all_on"
     };
 
-    for (var key in elementIds) {
-        var element = document.getElementById(elementIds[key]);
+    for (let key in elementIds) {
+        const element = document.getElementById(elementIds[key]);
         element.style.display = (key === elemento) ? key : "none";
     }
 }
 
 function global(atributo) { // atributo do css que vai ser aplicado
-    elemento = document.getElementById("elemento").value // elemento que vai receber atributo
+    const elementoValue = document.getElementById("elemento").value // elemento que vai receber atributo
+    const elementoChange = document.getElementById(elemento + atributo);
 
-    if (document.getElementById(atributo).value === "ativa" && elemento !== 'null') {
+    if (document.getElementById(atributo).value === "ativa" && elemento !== '') {
         return;
     }
-    else {
-        const css = document.getElementById(atributo).value // valor que o tibuto vai receber
-        if (document.getElementById(atributo).value === "null" ) {
-            document.getElementById(elemento + atributo).style.display = "none";
-        }
-        else if (document.getElementById(elemento + atributo)) {// este if verifica se existe a linha pra modiificar o texto
-            document.getElementById(elemento + atributo).innerText = atributo + ":" + css + ";"; // css vai ser escrito no navegador
-            document.getElementById(elemento + atributo).style.display = "block";
-
-        }
-
-
-
-        else { // este else adiciona a linha ao corpo do site
-            var criar = document.createElement('p');
-            criar.id = elemento + atributo;
-            document.getElementById('visor' + elemento).appendChild(criar)
-            document.getElementById(elemento + atributo).innerText = atributo + ":" + css + ";";
-            document.getElementById(elemento + atributo).style = 'color: rgb(3, 143, 194);';
-            document.getElementById(elemento + atributo).style.marginLeft = '15px';
-        }
-        document.getElementById(elemento).style[atributo] = css;//adicionando o valor selecionado ao atributo do elemento escolhido
+    
+    const css = document.getElementById(atributo).value // valor que o tibuto vai receber
+    if (document.getElementById(atributo).value === "null") {
+        elementoChange.style.display = "none";
     }
+    else if (elementoChange) {// este if verifica se existe a linha pra modiificar o texto
+        elementoChange.innerText = atributo + ":" + css + ";"; // css vai ser escrito no navegador
+        elementoChange.style.display = "block";
+    }
+    else { // este else adiciona a linha ao corpo do site
+        const criar = document.createElement('p');
+        criar.id = elementoValue + atributo;
+        document.getElementById('visor' + elementoValue).appendChild(criar)
+        elementoChange.innerText = atributo + ":" + css + ";";
+        elementoChange.style = 'color: rgb(3, 143, 194);';
+        elementoChange.style.marginLeft = '15px';
+    }
+    document.getElementById(elementoValue).style[atributo] = css;//adicionando o valor selecionado ao atributo do elemento escolhido
 }
 function criarelemento() {
-    elemento = document.getElementById("elemento").value 
+    const elemento = document.getElementById("elemento").value 
     if(elemento !== 'null' ){
-    var add = document.getElementById('criadorelemento').value;// input nome do elemento
-    var divNome = "local" + add;
-    var sectionNome = "visor" + add;
-    var criarlocal = document.createElement('div');
-    criarlocal.id = divNome;
-    document.getElementById("css_view").appendChild(criarlocal);
+        const add = document.getElementById('criadorelemento').value;// input nome do elemento
+        const divNome = "local" + add;
+        const sectionNome = "visor" + add;
+        const criarlocal = document.createElement('div');
+        criarlocal.id = divNome;
+        document.getElementById("css_view").appendChild(criarlocal);
 
-    var criarsection = document.createElement('section');// teremos um section
-    criarsection.id = sectionNome; //nome do elemento criado
-    document.getElementById(divNome).appendChild(criarsection) // adiciona o elemento criado no local desejado
+        const criarsection = document.createElement('section');// teremos um section
+        criarsection.id = sectionNome; //nome do elemento criado
+        document.getElementById(divNome).appendChild(criarsection) // adiciona o elemento criado no local desejado
 
-    var criarparagrafoinicio = document.createElement("p");
-    criarparagrafoinicio.id = add + "inicio";
-    document.getElementById(sectionNome).appendChild(criarparagrafoinicio)
-    document.getElementById(add + "inicio").innerText = "#" + add + "{";
-    document.getElementById(add + "inicio").style = 'color: rgb(186, 186, 2);';
+        const criarparagrafoinicio = document.createElement("p");
+        criarparagrafoinicio.id = add + "inicio";
+        document.getElementById(sectionNome).appendChild(criarparagrafoinicio)
+        document.getElementById(add + "inicio").innerText = "#" + add + "{";
+        document.getElementById(add + "inicio").style = 'color: rgb(186, 186, 2);';
 
-    var criarparagrafofim = document.createElement("p");
-    criarparagrafofim.id = add + "fim";
-    document.getElementById(divNome).appendChild(criarparagrafofim)
-    document.getElementById(add + "fim").innerText = "}";
-    document.getElementById(add + "fim").style = 'color: rgb(186, 186, 2);';
+        const criarparagrafofim = document.createElement("p");
+        criarparagrafofim.id = add + "fim";
+        document.getElementById(divNome).appendChild(criarparagrafofim)
+        document.getElementById(add + "fim").innerText = "}";
+        document.getElementById(add + "fim").style = 'color: rgb(186, 186, 2);';
 
 
-    var criarElemento = document.createElement('div');
-    criarElemento.id = add; //document.getElementById('criadorelemento').value;// input nome do elemento
-    var local = document.getElementById("elemento").value;
+        const criarElemento = document.createElement('div');
+        criarElemento.id = add; //document.getElementById('criadorelemento').value;// input nome do elemento
+        var local = document.getElementById("elemento").value;
 
-    document.getElementById(local).appendChild(criarElemento);
+        document.getElementById(local).appendChild(criarElemento);
 
-    var opt = document.createElement('option');
-    opt.value = add;
-    opt.innerText = add;
-    document.getElementById('elemento').appendChild(opt);
+        var opt = document.createElement('option');
+        opt.value = add;
+        opt.innerText = add;
+        document.getElementById('elemento').appendChild(opt);
     }
-    else{return}
+    else {
+        return
+    }
 }

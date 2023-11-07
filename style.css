@@ -1,26 +1,23 @@
 * {
     padding: 0;
     margin: 0;
-
-
 }
 
 body {
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.933);
-    max-width: 1250px;
     height: 100%;
+    width: 100vw;
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.933);
 }
 
 header {
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     color: white;
     z-index: 1;
-
 }
 
 .topo {
@@ -38,12 +35,8 @@ header {
 
 
 main {
-    width: 99vw;
+    width: 99%;
     display: flex;
-    
-
-
-
 }
 
 .guia {
@@ -61,7 +54,7 @@ main {
 
 .editor {
     display: flex;
-    width: 99vw;
+    width: 99%;
 }
 
 #visor_html {
@@ -107,20 +100,17 @@ main {
 }
 
 #estrutura_div {
-    background-image: url(/estrutura.png);
+    background-image: url("/estrutura.png"); /* essa imagem nao existe */
     background-size: cover;
     min-width: 250px;
-
 }
 
 .seletores {
     width: 100%;
     min-width: 250px;
-    border: solid white;
     margin: 10px;
-
+    border: solid white;
     overflow: auto;
-
 }
 
 #border_on label {
@@ -128,8 +118,9 @@ main {
     margin-left: 10px;
 }
 
-
-
+#border_on .grupo-input {
+    margin-bottom: 1em;
+}
 
 #estrutura_div {
     width: calc(100%-10px);
@@ -148,13 +139,11 @@ main {
     background-color: white;
     box-shadow: 0 0 10px rgb(255, 255, 255);
     overflow: auto;
-
-
 }
 
 footer {
     height: 30px;
-    width: 99vw;
+    width: 99%;
     margin: auto;
     text-align: center;
     color: white;
@@ -212,5 +201,55 @@ footer {
 h4 {
     text-align: center;
     color: white;
+    border-bottom: solid white;
+}
+
+
+#flex_on {
+    display: none;
+    width: calc(100% - 10px);
+    background-color: rgb(25, 27, 30);
+    color: white;
+    padding: 5px;
+
+    border-bottom: solid;
+}
+
+#border_on {
+    display: none;
+    width: calc(100%);
+    height: calc(100% - 10px);
+    background-color: rgb(25, 27, 30);
+    color: white;
+    padding: 5px;
+}
+
+#flex_on select {
+    max-width: 90px;
+    width: auto;
+    margin-right: 10px;
+}
+
+#flex_on label {
+    margin-left: 10px;
+}
+
+.campos label {
+    width: 100px;
+    display: inline-block;
+    justify-content: space-around;
+}
+
+
+#grid_on {
+    display: none;
+    width: calc(100% - 20px);
+    border-bottom: solid white;
+    background-color: rgb(25, 27, 30);
+    color: white;
+    padding: 10px;
+}
+
+#grid_on label {
     border-bottom: solid white;
 }
